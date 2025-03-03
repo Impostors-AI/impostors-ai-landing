@@ -1,54 +1,16 @@
 "use client";
 
+import DroppingEmojis from "@/components/DroppingEmojis";
+import SwitchTheme from "@/components/SwitchTheme";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
-import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
-
-const SwitchTheme = ({ className }: { className?: string }) => {
-  const { setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  const isDarkMode = resolvedTheme === "dark";
-
-  const handleToggle = () => {
-    if (isDarkMode) {
-      setTheme("light");
-    } else {
-      setTheme("dark");
-    }
-  };
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
-  return (
-    <div className={`flex space-x-2 h-8 items-center justify-center text-sm ${className}`}>
-      <input
-        id="theme-toggle"
-        type="checkbox"
-        className="toggle toggle-primary bg-primary hover:bg-primary border-primary"
-        onChange={handleToggle}
-        checked={isDarkMode}
-      />
-      <label htmlFor="theme-toggle" className={`swap swap-rotate ${!isDarkMode ? "swap-active" : ""}`}>
-        <SunIcon className="swap-on h-5 w-5" />
-        <MoonIcon className="swap-off h-5 w-5" />
-      </label>
-    </div>
-  );
-};
 
 export default function Home() {
   return (
     <main className="bg-success text-base-content min-h-screen font-sans">
       {/* NAVBAR */}
-      <nav className="sticky text-center top-0 z-50 bg-success p-2 flex justify-center items-center shadow-md text-black">
+      <nav className="sticky text-center top-0 z-50 bg-success py-2 px-5 flex justify-center items-center shadow-md text-black">
         <span>
-          We’re thrilled to share that we won the{" "}
+          We’re thrilled to share that Impostors.AI won the{" "}
           <a
             href="https://devfolio.co/projects/impostorsai-abd1"
             className="link"
@@ -62,15 +24,30 @@ export default function Home() {
       </nav>
 
       {/* HERO SECTION */}
-      <section className="hero min-h-screen relative bg-primary">
+      <section className="hero min-h-screen relative bg-primary overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <DroppingEmojis count={15} />
+        </div>
+
         <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-center text-neutral-content flex flex-col items-center">
-          <h1 className="text-4xl sm:text-7xl lg:text-9xl font-bold drop-shadow-lg">🎭 Impostors.AI</h1>
+        <div className="hero-content text-center text-neutral-content flex flex-col items-center relative">
+          <h1 className="flex flex-col md:block text-5xl sm:text-7xl lg:text-9xl font-bold drop-shadow-lg">
+            🎭
+            <span>Impostors.AI</span>
+          </h1>
           <p className="text-xl mt-24 sm:mt-44">AI-Powered Social Deduction Game</p>
-          <div className="mt-2">
+          <div className="mt-2 flex space-x-4">
+            <a
+              href="https://app-impostorsai.vercel.app"
+              className="btn btn-success hover:animate-pulse"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Launch Game
+            </a>
             <a
               href="https://docs.fileverse.io/0x3a7dd16634a22E2A085a1b7792020cD16919239b/0#key=cDht84Ewngx2HnMazgkArjGOFhAuO25vlUNf-3_AIwryZEcVoo4TzK-l6vmx7SBL"
-              className="btn btn-primary"
+              className="btn btn-primary hover:animate-pulse"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -262,6 +239,42 @@ export default function Home() {
       <footer className="footer p-4 bg-base-200 text-base-content flex items-center justify-between">
         <div>
           <p>© 2025 Impostors.AI</p>
+        </div>
+        <div className="flex space-x-4">
+          <a
+            href="https://x.com/impostorsai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-500"
+            aria-label="Twitter"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              className="w-6 h-6"
+            >
+              <path d="M23.953 4.569a10 10 0 0 1-2.825.775 4.959 4.959 0 0 0 2.163-2.723 10.032 10.032 0 0 1-3.127 1.196 4.92 4.92 0 0 0-8.384 4.482A13.978 13.978 0 0 1 1.671 3.149a4.822 4.822 0 0 0-.666 2.475c0 1.708.87 3.213 2.188 4.099a4.904 4.904 0 0 1-2.229-.616v.06a4.92 4.92 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.224.085 4.937 4.937 0 0 0 4.604 3.417A9.868 9.868 0 0 1 .96 19.54a13.94 13.94 0 0 0 7.548 2.209c9.057 0 14.009-7.496 14.009-13.986 0-.21-.006-.423-.015-.633A9.935 9.935 0 0 0 24 4.59z" />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/Impostors-AI"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-500"
+            aria-label="GitHub"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              className="w-6 h-6"
+              fill="currentColor"
+            >
+              <path
+                d="M10 0C8.68678 0 7.38642 0.258658 6.17317 0.761205C4.95991 1.26375 3.85752 2.00035 2.92893 2.92893C1.05357 4.8043 0 7.34784 0 10C0 14.42 2.87 18.17 6.84 19.5C7.34 19.58 7.5 19.27 7.5 19V17.31C4.73 17.91 4.14 15.97 4.14 15.97C3.68 14.81 3.03 14.5 3.03 14.5C2.12 13.88 3.1 13.9 3.1 13.9C4.1 13.97 4.63 14.93 4.63 14.93C5.5 16.45 6.97 16 7.54 15.76C7.63 15.11 7.89 14.67 8.17 14.42C5.95 14.17 3.62 13.31 3.62 9.5C3.62 8.39 4 7.5 4.65 6.79C4.55 6.54 4.2 5.5 4.75 4.15C4.75 4.15 5.59 3.88 7.5 5.17C8.29 4.95 9.15 4.84 10 4.84C10.85 4.84 11.71 4.95 12.5 5.17C14.41 3.88 15.25 4.15 15.25 4.15C15.8 5.5 15.45 6.54 15.35 6.79C16 7.5 16.38 8.39 16.38 9.5C16.38 13.32 14.04 14.16 11.81 14.41C12.17 14.72 12.5 15.33 12.5 16.26V19C12.5 19.27 12.66 19.59 13.17 19.5C17.14 18.16 20 14.42 20 10C20 8.68678 19.7413 7.38642 19.2388 6.17317C18.7362 4.95991 17.9997 3.85752 17.0711 2.92893C16.1425 2.00035 15.0401 1.26375 13.8268 0.761205C12.6136 0.258658 11.3132 0 10 0Z"
+              />
+            </svg>
+          </a>
         </div>
         <div>
           <SwitchTheme />
