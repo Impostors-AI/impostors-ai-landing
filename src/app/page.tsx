@@ -10,7 +10,7 @@ export default function Home() {
       {/* NAVBAR */}
       <nav className="sticky text-center top-0 z-50 bg-success py-2 px-5 flex justify-center items-center shadow-md text-black">
         <span>
-          We’re thrilled to share that Impostors.AI won the{" "}
+          We’re thrilled to share that Impostors AI won the{" "}
           <a
             href="https://devfolio.co/projects/impostorsai-abd1"
             className="link"
@@ -33,7 +33,7 @@ export default function Home() {
         <div className="hero-content text-center text-neutral-content flex flex-col items-center relative">
           <h1 className="flex flex-col md:block text-5xl sm:text-7xl lg:text-9xl font-bold drop-shadow-lg">
             🎭
-            <span>Impostors.AI</span>
+            <span>Impostors AI</span>
           </h1>
           <p className="text-xl mt-24 sm:mt-44">AI-Powered Social Deduction Game</p>
           <div className="mt-2 flex space-x-4">
@@ -97,7 +97,7 @@ export default function Home() {
               width="560"
               height="315"
               src="https://www.youtube.com/embed/HUw_e4JudvY?si=iuJUgm403tnGBAKz"
-              title="Impostors.AI Demo"
+              title="Impostors AI Demo"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -238,7 +238,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="footer p-4 bg-base-200 text-base-content flex items-center justify-between">
         <div>
-          <p>© 2025 Impostors.AI</p>
+          <p>© 2025 Impostors AI</p>
         </div>
         <div className="flex space-x-4">
           <a

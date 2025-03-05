@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = getMetadata({ title: "Impostors.AI", description: "AI-Powered Social Deduction Game" });
+export const metadata = getMetadata({ title: "Impostors AI", description: "AI-Powered Social Deduction Game" });
 
 export default function RootLayout({
   children,
