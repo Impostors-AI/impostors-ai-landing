@@ -38,7 +38,7 @@ export default function Home() {
           <p className="text-xl mt-24 sm:mt-44">AI-Powered Social Deduction Game</p>
           <div className="mt-2 flex space-x-4">
             <a
-              href="https://app-impostorsai.vercel.app"
+              href="https://app.impostorsai.xyz"
               className="btn btn-success hover:animate-pulse"
               target="_blank"
               rel="noopener noreferrer"
