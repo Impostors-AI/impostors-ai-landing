@@ -139,7 +139,6 @@ p {
     0 0 8px #26479a;
 }
 
-
 .agent-card {
   background-color: #0a1219;
   border: 2px solid #aa7322;
@@ -152,7 +151,7 @@ p {
   padding: 8px;
   text-align: center;
   position: relative;
-  font-family: 'Press Start 2P', monospace;
+  font-family: 'Pixelify Sans', monospace;
 }
 
 .agent-card img {
@@ -177,5 +176,5 @@ p {
   color: #eae2d1;
   text-align: center;
   margin-top: 0.25rem;
-  font-family: 'Press Start 2P', monospace;
+  font-family: 'Pixelify Sans', monospace;
 }
