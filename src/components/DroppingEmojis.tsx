@@ -1,6 +1,7 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const DroppingEmojis = ({ count = 15, emoji = "🎭" }) => {
+const DroppingEmojis = ({ count = 15 }) => {
   const [drops, setDrops] = useState<Array<{ left: number; delay: number; size: number }>>([]);
 
   useEffect(() => {
@@ -25,7 +26,13 @@ const DroppingEmojis = ({ count = 15, emoji = "🎭" }) => {
             fontSize: `${drop.size}rem`,
           }}
         >
-          {emoji}
+          <Image
+            src="/favicon.png"
+            alt="Impostors AI"
+            width={24}
+            height={24}
+            className="mr-2"
+          />
         </span>
       ))}
     </>

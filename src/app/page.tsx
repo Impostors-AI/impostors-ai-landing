@@ -1,14 +1,16 @@
 "use client";
 
 import DroppingEmojis from "@/components/DroppingEmojis";
-import SwitchTheme from "@/components/SwitchTheme";
 import Image from "next/image";
 
 export default function Home() {
+
   return (
-    <main className="bg-success text-base-content min-h-screen font-sans">
+    <main
+      className="bg-composite bg-repeat min-h-screen font-pixel text-primary-content bg-[#0a1219]"
+    >
       {/* NAVBAR */}
-      <nav className="sticky text-center top-0 z-50 bg-success py-2 px-5 flex justify-center items-center shadow-md text-black">
+      <nav className="sticky text-center top-0 z-50 bg-secondary py-2 px-5 flex justify-center items-center shadow-md">
         <span>
           We’re thrilled to share that Impostors AI won the{" "}
           <a
@@ -24,262 +26,252 @@ export default function Home() {
       </nav>
 
       {/* HERO SECTION */}
-      <section className="hero min-h-screen relative bg-primary overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
+      <section className="relative">
+        <div className="absolute inset-0 pointer-events-none z-0">
           <DroppingEmojis count={15} />
         </div>
 
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-center text-neutral-content flex flex-col items-center relative">
-          <h1 className="flex flex-col md:block text-5xl sm:text-7xl lg:text-9xl font-bold drop-shadow-lg">
-            🎭
-            <span>Impostors AI</span>
-          </h1>
-          <p className="text-xl mt-24 sm:mt-44">AI-Powered Social Deduction Game</p>
-          <div className="mt-2 flex space-x-4">
+        {/* TITLE + BUTTONS */}
+        <div className="flex flex-col items-center w-full pt-10 md:pt-16 relative z-10">
+          <div className="flex items-center gap-1 lg:mb-4">
+            <Image
+              src="/favicon.png"
+              alt="Impostors AI"
+              width={120}
+              height={120}
+              className="mr-2 w-[60px] h-[60px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px]"
+            />
+            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold drop-shadow-lg">
+              <span>Impostors AI</span>
+            </h1>
+          </div>
+          <p className="text-lg sm:text-2xl lg:text-3xl mb-6">AI-Powered Social Deduction Game</p>
+          <div className="flex gap-4 sm:gap-9 items-center justify-center">
             <a
               href="https://app.impostorsai.xyz"
-              className="btn btn-success hover:animate-pulse"
+              className="pixel-button pixel-button--green"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Launch Game
+              ▶ Launch Game
             </a>
             <a
               href="https://docs.fileverse.io/0x3a7dd16634a22E2A085a1b7792020cD16919239b/0#key=cDht84Ewngx2HnMazgkArjGOFhAuO25vlUNf-3_AIwryZEcVoo4TzK-l6vmx7SBL"
-              className="btn btn-primary hover:animate-pulse"
+              className="pixel-button pixel-button--blue"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Documentation
+              📜 Documentation
             </a>
           </div>
         </div>
-      </section>
 
-      {/* ABOUT SECTION */}
-      <section id="about" className="py-10 px-5 bg-base-200">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4 text-center">About</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="card bg-base-100 shadow-xl">
-              <div className="card-body">
-                <h3 className="card-title">AI-Driven Strategy</h3>
-                <p>
-                  10 AI agents strategize, but one is sabotaging. Players must analyze conversations & vote out the traitor.
-                </p>
+        {/* COUNCIL IMAGE + ABOUT */}
+        <div className="relative w-full flex justify-center items-center -mt-12 sm:-mt-28 md:-mt-40 min-[930px]:-mt-52 z-0">
+          <Image
+            src="/images/hero-council-table.png"
+            alt="Impostors AI Council"
+            width={1024}
+            height={768}
+            priority
+            className="hidden md:block"
+          />
+
+          {/* Small screen image (<768px) */}
+          <Image
+            src="/images/hero-council-table-md.png"
+            alt="Impostors AI Council"
+            width={768}
+            height={576}
+            priority
+            className="block md:hidden"
+          />
+
+          {/* ABOUT OVER TABLE */}
+          <section id="about" className="absolute top-[58%] w-full px-5 z-10">
+            <div className="flex justify-center text-center">
+              <div className="rounded-xl shadow-xl">
+                <h2 className="text-[26px] min-[425px]:text-4xl sm:text-5xl font-bold mt-3 sm:mt-0 text-primary">About</h2>
+
+                <div className="flex flex-col items-center sm:w-1/2 mt-4 mx-auto md:w-auto md:flex-row md:mt-9 min-[930px]:mt-20 md:max-w-[914px]">
+                  <div className="md:max-w-[312px] md:mr-7">
+                    <h3 className="font-bold text-2xl mt-5">AI-Driven Strategy</h3>
+                    <p className="text-xs min-[930px]:text-sm md:px-5 md:mt-7">
+                      10 AI agents strategize, but one is sabotaging. Players must
+                      analyze conversations & vote out the traitor.
+                    </p>
+                  </div>
+                  <div className="md:w-[265px] md:mr-7">
+                    <h3 className="font-bold text-2xl mt-5 md:mt-0">On-Chain Governance</h3>
+                    <p className="text-xs min-[930px]:text-sm min-[930px]:px-5">
+                      Everything runs fully on-chain, ensuring fair outcomes and
+                      tamper-proof voting mechanics.
+                    </p>
+                  </div>
+                  <div className="md:max-w-[312px]">
+                    <h3 className="font-bold text-2xl mt-5">Scalable Themes</h3>
+                    <p className="text-xs min-[930px]:text-sm md:px-5 md:mt-7">
+                      Medieval kingdom? Futuristic colony? The system supports
+                      infinite AI deception scenarios and expansions.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="card bg-base-100 shadow-xl">
-              <div className="card-body">
-                <h3 className="card-title">On-Chain Governance</h3>
-                <p>Everything runs fully on-chain, ensuring fair outcomes and tamper-proof voting mechanics.</p>
-              </div>
-            </div>
-            <div className="card bg-base-100 shadow-xl">
-              <div className="card-body">
-                <h3 className="card-title">Scalable Themes</h3>
-                <p>
-                  Medieval kingdom? Futuristic colony? The system supports infinite AI deception scenarios and expansions.
-                </p>
-              </div>
-            </div>
-          </div>
+          </section>
         </div>
       </section>
 
       {/* VIDEO DEMO SECTION */}
-      <section id="video-demo" className="py-10 bg-base-100">
-        <div className="max-w-5xl mx-auto px-5">
-          <h2 className="text-3xl font-bold mb-6 text-center">Demo</h2>
+      <section id="video-demo">
+        <div
+          className="max-w-5xl mx-auto px-4 mt-[294px] min-[500px]:mt-56 sm:mt-48 md:mt-0"
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-center text-primary">Demo</h2>
           <div className="flex justify-center">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/HUw_e4JudvY?si=iuJUgm403tnGBAKz"
-              title="Impostors AI Demo"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            <div className="pixel-frame p-4 w-full max-w-[700px]">
+              <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/HUw_e4JudvY?si=iuJUgm403tnGBAKz"
+                  title="Impostors AI Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full rounded-sm"
+                  frameBorder="0"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* AGENTS SECTION */}
-      <section id="agents" className="py-10 bg-base-200">
-        <div className="max-w-5xl mx-auto px-5">
-          <h2 className="text-3xl font-bold mb-6 text-center">Meet the Agents</h2>
-          <p className="text-center mb-8">
-            Each AI Agent plays a unique role in the kingdom. One of them is a traitor...
+      <section id="agents" className="py-10 md:py-20">
+        <div className="max-w-6xl mx-auto px-5">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-center text-primary">Meet the Agents</h2>
+          <p className="text-base w-3/4 md:w-auto sm:text-xl text-center mb-6 mx-auto ">
+            Each AI Agent plays a unique role in the kingdom. One of them isn’t telling the truth...
           </p>
 
-          <div className="flex flex-col items-center md:flex-row md:justify-center md:space-x-[-5rem] mb-10">
-            <div className="relative w-44 h-60 bg-base-100 shadow-xl transform md:rotate-[-5deg] z-40 hover:z-40 hover:rotate-0 transition duration-300 mb-8 md:mb-0 md:mx-4">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
-                <Image src="/agents/General.webp" alt="General" width={150} height={150} className="mb-2" />
-                <h3 className="text-lg font-bold">General</h3>
-                <p className="text-sm">Leads troop formations</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 md:gap-x-24 gap-y-5 justify-center items-start max-w-2xl mx-auto">
+            {[
+              { name: "General", image: "General", desc: "Leads armies" },
+              { name: "Diplomat", image: "Diplomat", desc: "Forges alliances" },
+              { name: "Treasurer", image: "Treasurer", desc: "Manages treasury" },
+              { name: "Spymaster", image: "Spymaster", desc: "Gathers intel" },
+              { name: "Blacksmith", image: "Blacksmith", desc: "Forges gear" },
+              { name: "Mage", image: "Mage", desc: "Arcane powers" },
+              { name: "Healer", image: "Healer", desc: "Heals allies" },
+              { name: "Strategist", image: "Strategist", desc: "Plans tactics" },
+              { name: "Tactician", image: "Tactician", desc: "Coordinates moves" },
+              { name: "Architect", image: "Architect", desc: "Builds defenses" }
+            ].map((agent) => (
+              <div key={agent.name} className="agent-wrapper">
+                <div className="agent-card">
+                  <Image
+                    src={`/agents/${agent.image}.webp`}
+                    alt={agent.name}
+                    width={120}
+                    height={120}
+                    className="mx-auto mb-6"
+                  />
+                  <h3 className="agent-name">{agent.name}</h3>
+                </div>
+                <p className="agent-description w-max">{agent.desc}</p>
               </div>
-            </div>
-
-            <div className="relative w-44 h-60 bg-base-100 shadow-xl transform md:rotate-[-2deg] z-30 hover:z-40 hover:rotate-6 transition duration-300 mb-8 md:mb-0 md:mx-4">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
-                <Image src="/agents/Diplomat.webp" alt="Diplomat" width={150} height={150} className="mb-2" />
-                <h3 className="text-lg font-bold">Diplomat</h3>
-                <p className="text-sm">Negotiates alliances</p>
-              </div>
-            </div>
-
-            <div className="relative w-44 h-60 bg-base-100 shadow-xl transform md:rotate-0 z-20 hover:z-40 hover:rotate-[3deg] transition duration-300 md:mx-4 mb-8 md:mb-0">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
-                <Image src="/agents/Treasurer.webp" alt="Treasurer" width={150} height={150} className="mb-2" />
-                <h3 className="text-lg font-bold">Treasurer</h3>
-                <p className="text-sm">Manages kingdom funds</p>
-              </div>
-            </div>
-
-            <div className="relative w-44 h-60 bg-base-100 shadow-xl transform md:rotate-[2deg] z-10 hover:z-40 hover:rotate-[6deg] transition duration-300 md:mx-4 mb-8 md:mb-0">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
-                <Image src="/agents/Spymaster.webp" alt="Spymaster" width={150} height={150} className="mb-2" />
-                <h3 className="text-lg font-bold">Spymaster</h3>
-                <p className="text-sm">Gathers intelligence</p>
-              </div>
-            </div>
-
-            <div className="relative w-44 h-60 bg-base-100 shadow-xl transform md:rotate-[5deg] z-0 hover:z-40 hover:rotate-0 transition duration-300 md:mx-4">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
-                <Image src="/agents/Blacksmith.webp" alt="Blacksmith" width={150} height={150} className="mb-2" />
-                <h3 className="text-lg font-bold">Blacksmith</h3>
-                <p className="text-sm">Forges weapons & armor</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center md:flex-row md:justify-center md:space-x-[-5rem]">
-            <div className="relative w-44 h-60 bg-base-100 shadow-xl transform md:rotate-[-5deg] z-40 hover:z-40 hover:rotate-0 transition duration-300 mb-8 md:mb-0 md:mx-4">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
-                <Image src="/agents/Mage.webp" alt="Mage" width={150} height={150} className="mb-2" />
-                <h3 className="text-lg font-bold">Mage</h3>
-                <p className="text-sm">Wields arcane powers</p>
-              </div>
-            </div>
-
-            <div className="relative w-44 h-60 bg-base-100 shadow-xl transform md:rotate-[-2deg] z-30 hover:z-40 hover:rotate-6 transition duration-300 mb-8 md:mb-0 md:mx-4">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
-                <Image src="/agents/Healer.webp" alt="Healer" width={150} height={150} className="mb-2" />
-                <h3 className="text-lg font-bold">Healer</h3>
-                <p className="text-sm">Cares for the wounded</p>
-              </div>
-            </div>
-
-            <div className="relative w-44 h-60 bg-base-100 shadow-xl transform md:rotate-0 z-20 hover:z-40 hover:rotate-[3deg] transition duration-300 md:mx-4 mb-8 md:mb-0">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
-                <Image src="/agents/Strategist.webp" alt="Strategist" width={150} height={150} className="mb-2" />
-                <h3 className="text-lg font-bold">Strategist</h3>
-                <p className="text-sm">Formulates grand plans</p>
-              </div>
-            </div>
-
-            <div className="relative w-44 h-60 bg-base-100 shadow-xl transform md:rotate-[2deg] z-10 hover:z-40 hover:rotate-[6deg] transition duration-300 md:mx-4 mb-8 md:mb-0">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
-                <Image src="/agents/Tactician.webp" alt="Tactician" width={150} height={150} className="mb-2" />
-                <h3 className="text-lg font-bold">Tactician</h3>
-                <p className="text-sm">Coordinates battlefield moves</p>
-              </div>
-            </div>
-
-            <div className="relative w-44 h-60 bg-base-100 shadow-xl transform md:rotate-[5deg] z-0 hover:z-40 hover:rotate-0 transition duration-300 md:mx-4">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
-                <Image src="/agents/Architect.webp" alt="Architect" width={150} height={150} className="mb-2" />
-                <h3 className="text-lg font-bold">Architect</h3>
-                <p className="text-sm">Designs fortress defenses</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
+
       {/* TEAM SECTION */}
-      <section id="team" className="py-10 bg-base-100">
+      <section id="team" className="pb-10">
         <div className="max-w-5xl mx-auto px-5">
-          <h2 className="text-3xl font-bold mb-6 text-center">Team</h2>
-          <div className="flex flex-wrap justify-center gap-8">
-            <div className="card w-60 bg-base-200 shadow-xl">
-              <figure className="pt-10">
-                <div className="avatar">
-                  <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                    <Image src="/agents/Blacksmith.webp" alt="avatar" width={96} height={96} />
-                  </div>
-                </div>
-              </figure>
-              <div className="card-body items-center text-center">
-                <h3 className="card-title">Ailton Júnior</h3>
-                <p>CTO</p>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-center text-primary">Team</h2>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-10">
+            {[
+              {
+                name: "Ailton Júnior",
+                role: "CTO",
+                image: "Blacksmith",
+              },
+              {
+                name: "Lawrence Gabriel",
+                role: "CEO",
+                image: "Tactician",
+              },
+            ].map((member) => (
+              <div
+                key={member.name}
+                className="pixel-frame px-4 py-6 flex flex-col items-center text-center w-64"
+              >
+                <Image
+                  src={`/agents/${member.image}.webp`}
+                  alt={member.name}
+                  width={120}
+                  height={120}
+                  className="mb-4"
+                />
+                <h3 className="text-2xl font-bold">{member.name}</h3>
+                <p className="text-base text-accent-content font-pixel uppercase">{member.role}</p>
               </div>
-            </div>
-            <div className="card w-60 bg-base-200 shadow-xl">
-              <figure className="pt-10">
-                <div className="avatar">
-                  <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                    <Image src="/agents/Tactician.webp" alt="avatar" width={96} height={96} />
-                  </div>
-                </div>
-              </figure>
-              <div className="card-body items-center text-center">
-                <h3 className="card-title">Lawrence Gabriel</h3>
-                <p>CEO</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="footer p-4 bg-base-200 text-base-content flex items-center justify-between">
+      <footer className="footer py-4 px-4 flex items-center justify-between max-w-5xl mx-auto">
         <div>
-          <p>© 2025 Impostors AI</p>
+          <p className="text-base">© 2025 Impostors AI</p>
         </div>
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 sm:space-x-8">
+          {/* X/Twitter */}
           <a
             href="https://x.com/impostorsai"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-blue-500"
+            className="hover:opacity-70 transition"
             aria-label="Twitter"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
-              className="w-6 h-6"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M23.953 4.569a10 10 0 0 1-2.825.775 4.959 4.959 0 0 0 2.163-2.723 10.032 10.032 0 0 1-3.127 1.196 4.92 4.92 0 0 0-8.384 4.482A13.978 13.978 0 0 1 1.671 3.149a4.822 4.822 0 0 0-.666 2.475c0 1.708.87 3.213 2.188 4.099a4.904 4.904 0 0 1-2.229-.616v.06a4.92 4.92 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.224.085 4.937 4.937 0 0 0 4.604 3.417A9.868 9.868 0 0 1 .96 19.54a13.94 13.94 0 0 0 7.548 2.209c9.057 0 14.009-7.496 14.009-13.986 0-.21-.006-.423-.015-.633A9.935 9.935 0 0 0 24 4.59z" />
+              <path
+                d="M22 5H23V6H22V5ZM22 3H23V4H22V3ZM21 5V6H22V7H21V12H20V14H19V16H18V17H17V18H16V19H14V20H11V21H4V20H2V19H1V18H3V19H6V18H7V17H5V16H4V15H3V14H5V13H3V12H2V10H4V9H3V8H2V4H3V5H4V6H5V7H7V8H10V9H12V5H13V4H14V3H19V4H22V5H21Z"
+                fill="#eae2d1"
+              />
             </svg>
           </a>
+
+          {/* GitHub */}
           <a
             href="https://github.com/Impostors-AI"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-gray-500"
+            className="hover:opacity-70 transition"
             aria-label="GitHub"
           >
             <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              className="w-6 h-6"
-              fill="currentColor"
             >
               <path
-                d="M10 0C8.68678 0 7.38642 0.258658 6.17317 0.761205C4.95991 1.26375 3.85752 2.00035 2.92893 2.92893C1.05357 4.8043 0 7.34784 0 10C0 14.42 2.87 18.17 6.84 19.5C7.34 19.58 7.5 19.27 7.5 19V17.31C4.73 17.91 4.14 15.97 4.14 15.97C3.68 14.81 3.03 14.5 3.03 14.5C2.12 13.88 3.1 13.9 3.1 13.9C4.1 13.97 4.63 14.93 4.63 14.93C5.5 16.45 6.97 16 7.54 15.76C7.63 15.11 7.89 14.67 8.17 14.42C5.95 14.17 3.62 13.31 3.62 9.5C3.62 8.39 4 7.5 4.65 6.79C4.55 6.54 4.2 5.5 4.75 4.15C4.75 4.15 5.59 3.88 7.5 5.17C8.29 4.95 9.15 4.84 10 4.84C10.85 4.84 11.71 4.95 12.5 5.17C14.41 3.88 15.25 4.15 15.25 4.15C15.8 5.5 15.45 6.54 15.35 6.79C16 7.5 16.38 8.39 16.38 9.5C16.38 13.32 14.04 14.16 11.81 14.41C12.17 14.72 12.5 15.33 12.5 16.26V19C12.5 19.27 12.66 19.59 13.17 19.5C17.14 18.16 20 14.42 20 10C20 8.68678 19.7413 7.38642 19.2388 6.17317C18.7362 4.95991 17.9997 3.85752 17.0711 2.92893C16.1425 2.00035 15.0401 1.26375 13.8268 0.761205C12.6136 0.258658 11.3132 0 10 0Z"
+                d="M23 9V15H22V17H21V19H20V20H19V21H18V22H16V23H15V18H14V17H15V16H17V15H18V14H19V9H18V6H16V7H15V8H14V7H10V8H9V7H8V6H6V9H5V14H6V15H7V16H9V18H7V17H6V16H4V17H5V19H6V20H9V23H8V22H6V21H5V20H4V19H3V17H2V15H1V9H2V7H3V5H4V4H5V3H7V2H9V1H15V2H17V3H19V4H20V5H21V7H22V9H23Z"
+                fill="#eae2d1"
               />
             </svg>
           </a>
         </div>
-        <div>
-          <SwitchTheme />
-        </div>
       </footer>
-    </main>
+    </main >
   );
 }

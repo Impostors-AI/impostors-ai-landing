@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* Your styles below */
 :root,
 [data-theme] {
   background: oklch(var(--b2));
@@ -54,7 +57,125 @@ p {
 .drop-emoji {
   position: absolute;
   top: 0;
-  /* Remove static opacity so the keyframe controls visibility */
   animation: drop 5s linear infinite;
   animation-fill-mode: backwards;
+}
+
+.bg-composite {
+  background-repeat: repeat-y, repeat-y, repeat-y;
+  background-position: center -50%;
+  background-size: 100% auto, auto, auto;
+  background-image:
+    url('/images/pixel-tiles-bg.png'),
+    none,
+    none;
+}
+
+@media (min-width: 366px) and (max-width: 640px) {
+  .bg-composite {
+    background-position: center -16%;
+    /* shift up to show bottom */
+  }
+}
+
+/* From 1024px and up: add side tiles */
+@media (min-width: 1024px) {
+  .bg-composite {
+    background-image:
+      url('/images/pixel-tiles-bg.png'),
+      url('/images/pixel-tiles-bg-2.png'),
+      url('/images/pixel-tiles-bg-2.png');
+
+    background-position: center top, left top, right top;
+    background-size: auto, auto, auto;
+  }
+}
+
+
+.pixel-button {
+  @apply inline-block text-center font-pixel text-xs w-40 sm:w-44 sm:text-sm px-5 py-3 uppercase;
+
+  border-radius: 12px;
+  border: none;
+
+  box-shadow:
+    inset 2px 2px 0 #00000066,
+    inset -2px -2px 0 #00000066,
+    0 0 0 2px #000;
+  /* Black border with pixel vibe */
+
+  transition: all 0.1s ease-in-out;
+}
+
+.pixel-button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 2px 2px 0 #00000066,
+    inset -2px -2px 0 #00000066,
+    0 0 0 2px #000,
+    0 3px 0 #000;
+  filter: brightness(1.1);
+}
+
+.pixel-button--green {
+  background-color: #369475;
+  color: #fff;
+}
+
+.pixel-button--blue {
+  background-color: #26479a;
+  color: #fff;
+}
+
+.pixel-frame {
+  border: 2px solid #26479a;
+  background-color: rgba(10, 18, 25, 0.3);
+  /* transparent bg for depth */
+  border-radius: 6px;
+  box-shadow:
+    inset 2px 2px 0 #00000066,
+    inset -2px -2px 0 #00000066,
+    0 0 0 2px #000,
+    0 0 8px #26479a;
+}
+
+
+.agent-card {
+  background-color: #0a1219;
+  border: 2px solid #aa7322;
+  border-radius: 6px;
+  box-shadow:
+    inset 2px 2px 0 #00000088,
+    inset -2px -2px 0 #00000088,
+    0 0 0 2px #000;
+  width: 140px;
+  padding: 8px;
+  text-align: center;
+  position: relative;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.agent-card img {
+  border-radius: 4px;
+}
+
+.agent-name {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.agent-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.agent-description {
+  font-size: 0.7rem;
+  color: #eae2d1;
+  text-align: center;
+  margin-top: 0.25rem;
+  font-family: 'Press Start 2P', monospace;
 }
