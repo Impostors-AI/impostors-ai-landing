@@ -1,6 +1,7 @@
 "use client";
 
 import DroppingEmojis from "@/components/DroppingEmojis";
+import PixelFrame from "@/components/PixelFrame";
 import Image from "next/image";
 
 export default function Home() {
@@ -129,7 +130,7 @@ export default function Home() {
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-center text-primary">Demo</h2>
           <div className="flex justify-center">
-            <div className="pixel-frame p-4 w-full max-w-[700px]">
+            <PixelFrame className="pixel-frame w-full max-w-[700px]" blue>
               <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
                 <iframe
                   src="https://www.youtube.com/embed/HUw_e4JudvY?si=iuJUgm403tnGBAKz"
@@ -140,7 +141,7 @@ export default function Home() {
                   frameBorder="0"
                 ></iframe>
               </div>
-            </div>
+            </PixelFrame>
           </div>
         </div>
       </section>
@@ -153,7 +154,7 @@ export default function Home() {
             Each AI Agent plays a unique role in the kingdom. One of them isn’t telling the truth...
           </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 md:gap-x-24 gap-y-5 justify-center items-start max-w-2xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 md:gap-x-24 gap-y-5 justify-center items-start max-w-3xl mx-auto">
             {[
               { name: "General", image: "General", desc: "Leads armies" },
               { name: "Diplomat", image: "Diplomat", desc: "Forges alliances" },
@@ -167,7 +168,7 @@ export default function Home() {
               { name: "Architect", image: "Architect", desc: "Builds defenses" }
             ].map((agent) => (
               <div key={agent.name} className="agent-wrapper">
-                <div className="agent-card">
+                <PixelFrame className="agent-card">
                   <Image
                     src={`/agents/${agent.image}.webp`}
                     alt={agent.name}
@@ -176,7 +177,7 @@ export default function Home() {
                     className="mx-auto mb-6"
                   />
                   <h3 className="agent-name">{agent.name}</h3>
-                </div>
+                </PixelFrame>
                 <p className="agent-description w-max">{agent.desc}</p>
               </div>
             ))}
@@ -202,10 +203,7 @@ export default function Home() {
                 image: "Tactician",
               },
             ].map((member) => (
-              <div
-                key={member.name}
-                className="pixel-frame px-4 py-6 flex flex-col items-center text-center w-64"
-              >
+              <PixelFrame key={member.name} className="pixel-frame px-4 py-6 flex flex-col items-center text-center" width="w-72" blue>
                 <Image
                   src={`/agents/${member.image}.webp`}
                   alt={member.name}
@@ -215,7 +213,7 @@ export default function Home() {
                 />
                 <h3 className="text-2xl font-bold">{member.name}</h3>
                 <p className="text-base text-accent-content font-pixel uppercase">{member.role}</p>
-              </div>
+              </PixelFrame>
             ))}
           </div>
         </div>

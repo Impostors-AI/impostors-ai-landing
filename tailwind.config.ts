@@ -44,6 +44,18 @@ const config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        pixelGold: {
+          light: "#FFD700",
+          DEFAULT: "#DAA520",
+          dark: "#B8860B",
+          darker: "#8B6914",
+        },
+        pixelBlue: {
+          dark: "#0A1929",
+          DEFAULT: "#1A2B3C",
+          light: "#2A3B4C",
+          darker: "#0A1219",
+        },
       },
       boxShadow: {
         center: "0 0 12px -2px rgb(0 0 0 / 0.05)",

@@ -128,27 +128,17 @@ p {
 }
 
 .pixel-frame {
-  border: 2px solid #26479a;
-  background-color: rgba(10, 18, 25, 0.3);
+  background-color: rgba(10, 18, 25, 0.5);
   /* transparent bg for depth */
-  border-radius: 6px;
-  box-shadow:
-    inset 2px 2px 0 #00000066,
-    inset -2px -2px 0 #00000066,
-    0 0 0 2px #000,
-    0 0 8px #26479a;
 }
 
 .agent-card {
-  background-color: #0a1219;
-  border: 2px solid #aa7322;
-  border-radius: 6px;
+  background-color: rgba(10, 18, 25, 0.5);
   box-shadow:
     inset 2px 2px 0 #00000088,
     inset -2px -2px 0 #00000088,
     0 0 0 2px #000;
   width: 140px;
-  padding: 8px;
   text-align: center;
   position: relative;
   font-family: 'Pixelify Sans', monospace;
@@ -160,7 +150,7 @@ p {
 
 .agent-name {
   margin-top: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #ffffff;
 }
 
@@ -172,7 +162,7 @@ p {
 }
 
 .agent-description {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: #eae2d1;
   text-align: center;
   margin-top: 0.25rem;
