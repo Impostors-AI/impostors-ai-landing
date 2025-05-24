@@ -5,27 +5,8 @@ import PixelFrame from "@/components/PixelFrame";
 import Image from "next/image";
 
 export default function Home() {
-
   return (
-    <main
-      className="bg-composite bg-repeat min-h-screen font-pixel text-primary-content bg-[#0a1219]"
-    >
-      {/* NAVBAR */}
-      <nav className="sticky text-center top-0 z-50 bg-secondary py-2 px-5 flex justify-center items-center shadow-md">
-        <span>
-          We’re thrilled to share that Impostors AI won the{" "}
-          <a
-            href="https://devfolio.co/projects/impostorsai-abd1"
-            className="link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Safe Agentathon
-          </a>
-          ! 🎉
-        </span>
-      </nav>
-
+    <main className="bg-composite bg-repeat min-h-screen font-pixel text-primary-content bg-[#0a1219]">
       {/* HERO SECTION */}
       <section className="relative">
         <div className="absolute inset-0 pointer-events-none z-0">
@@ -46,7 +27,9 @@ export default function Home() {
               <span>Impostors AI</span>
             </h1>
           </div>
-          <p className="text-lg sm:text-2xl lg:text-3xl mb-6">AI-Powered Social Deduction Game</p>
+          <p className="text-lg sm:text-2xl lg:text-3xl mb-6">
+            AI-Powered Social Deduction Game
+          </p>
           <div className="flex gap-4 sm:gap-9 items-center justify-center">
             <a
               href="https://app.impostorsai.xyz"
@@ -57,7 +40,7 @@ export default function Home() {
               ▶ Launch Game
             </a>
             <a
-              href="https://docs.fileverse.io/0x3a7dd16634a22E2A085a1b7792020cD16919239b/0#key=cDht84Ewngx2HnMazgkArjGOFhAuO25vlUNf-3_AIwryZEcVoo4TzK-l6vmx7SBL"
+              href="https://docs.fileverse.io/0x3D213B573D6471271AEf247e34f46B39D59A3142/0#key=TIAkL31D_zHZEqHD3MiHcw4PiCgy9Dr1tPJef_gW2CyOQjUDo4UhWAq0BXiFXMuH"
               className="pixel-button pixel-button--blue"
               target="_blank"
               rel="noopener noreferrer"
@@ -92,18 +75,24 @@ export default function Home() {
           <section id="about" className="absolute top-[58%] w-full px-5 z-10">
             <div className="flex justify-center text-center">
               <div className="rounded-xl shadow-xl">
-                <h2 className="text-[26px] min-[425px]:text-4xl sm:text-5xl font-bold mt-3 sm:mt-0 text-primary">About</h2>
+                <h2 className="text-[26px] min-[425px]:text-4xl sm:text-5xl font-bold mt-3 sm:mt-0 text-primary">
+                  About
+                </h2>
 
                 <div className="flex flex-col items-center sm:w-1/2 mt-4 mx-auto md:w-auto md:flex-row md:mt-9 min-[930px]:mt-20 md:max-w-[914px]">
                   <div className="md:max-w-[312px] md:mr-7">
-                    <h3 className="font-bold text-2xl mt-5">AI-Driven Strategy</h3>
+                    <h3 className="font-bold text-2xl mt-5">
+                      AI-Driven Strategy
+                    </h3>
                     <p className="text-xs min-[930px]:text-sm md:px-5 md:mt-7">
-                      10 AI agents strategize, but one is sabotaging. Players must
-                      analyze conversations & vote out the traitor.
+                      10 AI agents strategize, but one is sabotaging. Players
+                      must analyze conversations & vote out the traitor.
                     </p>
                   </div>
                   <div className="md:w-[265px] md:mr-7">
-                    <h3 className="font-bold text-2xl mt-5 md:mt-0">On-Chain Governance</h3>
+                    <h3 className="font-bold text-2xl mt-5 md:mt-0">
+                      On-Chain Governance
+                    </h3>
                     <p className="text-xs min-[930px]:text-sm min-[930px]:px-5">
                       Everything runs fully on-chain, ensuring fair outcomes and
                       tamper-proof voting mechanics.
@@ -125,13 +114,16 @@ export default function Home() {
 
       {/* VIDEO DEMO SECTION */}
       <section id="video-demo">
-        <div
-          className="max-w-5xl mx-auto px-4 mt-[294px] min-[500px]:mt-56 sm:mt-48 md:mt-0"
-        >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-center text-primary">Demo</h2>
+        <div className="max-w-5xl mx-auto px-4 mt-[294px] min-[500px]:mt-56 sm:mt-48 md:mt-0">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-center text-primary">
+            Demo
+          </h2>
           <div className="flex justify-center">
             <PixelFrame className="pixel-frame w-full max-w-[700px]" blue>
-              <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+              <div
+                className="relative w-full"
+                style={{ paddingBottom: "56.25%" }}
+              >
                 <iframe
                   src="https://www.youtube.com/embed/HUw_e4JudvY?si=iuJUgm403tnGBAKz"
                   title="Impostors AI Demo"
@@ -149,23 +141,42 @@ export default function Home() {
       {/* AGENTS SECTION */}
       <section id="agents" className="py-10 md:py-20">
         <div className="max-w-6xl mx-auto px-5">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-center text-primary">Meet the Agents</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-center text-primary">
+            Meet the Agents
+          </h2>
           <p className="text-base w-3/4 md:w-auto sm:text-xl text-center mb-6 mx-auto ">
-            Each AI Agent plays a unique role in the kingdom. One of them isn’t telling the truth...
+            Each AI Agent plays a unique role in the kingdom. One of them isn’t
+            telling the truth...
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 md:gap-x-24 gap-y-5 justify-center items-start max-w-3xl mx-auto">
             {[
               { name: "General", image: "General", desc: "Leads armies" },
               { name: "Diplomat", image: "Diplomat", desc: "Forges alliances" },
-              { name: "Treasurer", image: "Treasurer", desc: "Manages treasury" },
+              {
+                name: "Treasurer",
+                image: "Treasurer",
+                desc: "Manages treasury",
+              },
               { name: "Spymaster", image: "Spymaster", desc: "Gathers intel" },
               { name: "Blacksmith", image: "Blacksmith", desc: "Forges gear" },
               { name: "Mage", image: "Mage", desc: "Arcane powers" },
               { name: "Healer", image: "Healer", desc: "Heals allies" },
-              { name: "Strategist", image: "Strategist", desc: "Plans tactics" },
-              { name: "Tactician", image: "Tactician", desc: "Coordinates moves" },
-              { name: "Architect", image: "Architect", desc: "Builds defenses" }
+              {
+                name: "Strategist",
+                image: "Strategist",
+                desc: "Plans tactics",
+              },
+              {
+                name: "Tactician",
+                image: "Tactician",
+                desc: "Coordinates moves",
+              },
+              {
+                name: "Architect",
+                image: "Architect",
+                desc: "Builds defenses",
+              },
             ].map((agent) => (
               <div key={agent.name} className="agent-wrapper">
                 <PixelFrame className="agent-card">
@@ -185,11 +196,12 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* TEAM SECTION */}
       <section id="team" className="pb-10">
         <div className="max-w-5xl mx-auto px-5">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-center text-primary">Team</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-center text-primary">
+            Team
+          </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-10">
             {[
               {
@@ -203,7 +215,12 @@ export default function Home() {
                 image: "Tactician",
               },
             ].map((member) => (
-              <PixelFrame key={member.name} className="pixel-frame px-4 py-6 flex flex-col items-center text-center" width="w-72" blue>
+              <PixelFrame
+                key={member.name}
+                className="pixel-frame px-4 py-6 flex flex-col items-center text-center"
+                width="w-72"
+                blue
+              >
                 <Image
                   src={`/agents/${member.image}.webp`}
                   alt={member.name}
@@ -212,7 +229,9 @@ export default function Home() {
                   className="mb-4"
                 />
                 <h3 className="text-2xl font-bold">{member.name}</h3>
-                <p className="text-base text-accent-content font-pixel uppercase">{member.role}</p>
+                <p className="text-base text-accent-content font-pixel uppercase">
+                  {member.role}
+                </p>
               </PixelFrame>
             ))}
           </div>
@@ -270,6 +289,6 @@ export default function Home() {
           </a>
         </div>
       </footer>
-    </main >
+    </main>
   );
 }
